@@ -1,17 +1,17 @@
-import {MenuStyle} from './MenuStyle'
+import {MenuStyle,LinkStyle} from './MenuStyle'
 import { Link } from "react-router-dom"
 export const Menu = ()=>{
     return (
         <MenuStyle>
             <ul>
                 <li>
-                  <Link to="/">Accueil</Link>
+                  <LinkStyle to="/">Accueil</LinkStyle>
                 </li>
                 <li>
-                  <Link to="/category">Catégories</Link>
+                  <LinkStyle to="/category">Catégories</LinkStyle>
                 </li>
                 <li>
-                  <Link to="/contact">Contactez-nous</Link>
+                  <LinkStyle to="/contact">Contactez-nous</LinkStyle>
                 </li>
               </ul>
         </MenuStyle>
