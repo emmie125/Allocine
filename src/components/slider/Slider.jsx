@@ -22,10 +22,12 @@ export const Slider = ({images_Api,movies}) => {
                     <div
                       className="ContainerSlider__Images"
                       style={{
-                            background: `linear-gradient(to left bottom,rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url(${
+                            background: `linear-gradient(to left bottom,rgba(4, 13, 42, 0.287),rgba(0, 0, 0, 0.7)),url(${
                           images_Api + movie.backdrop_path
                         })`,
-                        backgroundSize : "cover"
+                        backgroundSize : "cover",
+                        
+                    
                       }}
                     >
                     </div>

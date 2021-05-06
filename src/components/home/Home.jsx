@@ -1,18 +1,15 @@
 import React from 'react'
-import SimpleImageSlider from "react-simple-image-slider";
 import Button from '../button/Button'
+import { ListCard } from '../card/Card';
 import HomeStyle from './HomeStyle'
 
-export const Home = (props) => {
+export const Home = ({images_Api,movies}) => {
     return (
       <HomeStyle>
-        <div>
-          <SimpleImageSlider width={200} height={10} images={props.images} />
+        <div className="home-card">
+            <ListCard movies={movies} images_Api={images_Api}/>
         </div>
-        <div>
-          {/* <Button onClick={props.onClick} className={props.className} iconButton={props.iconButton}/>
-                <Button onClick={props.onClick} className={props.className} iconButton={props.iconButton}/> */}
-        </div>
+        
       </HomeStyle>
     );
 }

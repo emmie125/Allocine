@@ -4,8 +4,8 @@ export const HeaderStyle = styled.header`
 width:100vw;
 height:10vh;
 position:fixed;
-//background-color:#00455E;
-background-color:transparent;
+background-color:#24445C;
+background-image:linear-gradient(to left bottom,rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7));
 display:flex;
 justify-content:space-evenly;
 align-items:center;

@@ -8,13 +8,8 @@ display:flex;
 flex-direction: column;
 background-color:#00455E;
 section{
-    
+    width:100%;
     display:flex;
     flex-direction: column;
 }
-.card__grid{
-    height:24.5% !important;
-  
-    font-size:0.6em !important;
-    display:flex !important;
-}`
+`

@@ -11,19 +11,13 @@ width:100%;
    
 .ContainerSlider__Images{
 
-    width:100%;
+    width:100vw;
     height:100vh;
-    
-    background-repeat: no-repeat;
-    
-    img{ 
-        width:100%;
-       /* object-fit: cover; */
-    }
+    background-repeat:no-repeat;
+    background-position:center;
 }
 .ContainerSlider__Title{
     color:#FFAE00 !important;
-    opacity:1;
     font-size:30px;
     position: absolute;
     width:100%;
@@ -31,6 +25,7 @@ width:100%;
     top:80%;
     height: 20%;
     z-index: 3;
+    background:linear-gradient(0deg,to bottom left,rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7));
 }
 
 

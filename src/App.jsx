@@ -75,6 +75,7 @@ function App() {
       />
       <section>
         <Slider movies={movies} images_Api={images_Api}/>
+        <Home movies={movies} images_Api={images_Api}/>
       </section>
     </Container>
   );
