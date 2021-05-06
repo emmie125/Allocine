@@ -49,7 +49,9 @@
   "devDependencies": {
     "@iconify-icons/akar-icons": "^1.1.9",
     "@iconify-icons/ant-design": "^1.1.0",
+    "@iconify-icons/bx": "^1.1.0",
     "@iconify-icons/cil": "^1.1.0",
+    "@iconify-icons/openmoji": "^1.1.13",
     "@iconify-icons/system-uicons": "^1.1.1",
     "@iconify/react": "^1.1.4"
   }

@@ -1,6 +1,10 @@
 import React from 'react';
+import { Icon, InlineIcon } from '@iconify/react';
+import bxCategory from '@iconify-icons/bx/bx-category';
+
 import { Slide } from 'react-slideshow-image';
 import { ContainerSlider } from './SliderStyle';
+import Button from '../button/Button';
 
 const proprietes={
     duration:5000,
@@ -33,6 +37,10 @@ export const Slider = ({images_Api,movies}) => {
                     </div>
                     <div>
                       <h2 className="ContainerSlider__Title">{`Title : ${movie.title}`}</h2>
+                    </div>
+                    <div>
+                      {/* <Button <Icon icon={bxCategory} />/>
+                      <Button/> */}
                     </div>
                   </div>
                 );

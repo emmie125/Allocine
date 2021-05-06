@@ -4,11 +4,13 @@ const HomeStyle= styled.div`
 
 background-color:#24445C;
 background:linear-gradient(to left bottom,rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7));
+position: relative;
 .home-card{
-    margin:2% 2%;
+    margin:5% 2%;
     width:96%;
-    background:white;
+    background-color:white;
     padding:1%;
-    //background-image:linear-gradient(to left bottom,rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7));
+    border-radius:10px;
+    background-image:linear-gradient(to left bottom,rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.1));
 }`
 export default HomeStyle

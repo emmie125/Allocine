@@ -15,7 +15,7 @@ z-index:1000;
     display:flex;
     justify-content: center;
     text-align:end;
-    whidth:50%;
+    width:50%;
     height:50%;
     padding:0% 5%;
 }
