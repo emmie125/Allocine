@@ -26,12 +26,12 @@ width:100%;
     top:65%;
     height: 20%;
     z-index: 3;
-    background:linear-gradient(20deg,to bottom left,rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.7));
+    background:linear-gradient(20deg,to  bottom left,rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.7));
 }
 .Container-slider__btn-cat{
     position: absolute;
     top:85%;
-    left:5%;
+    left:4%;
     display:flex;
     width:55%;
 }
@@ -45,6 +45,12 @@ width:100%;
     padding:2%;
     opacity: 0.4;
     cursor:pointer;
+
+   &:hover{
+    transform:scale(1.03);
+    opacity: 1;
+    transition: all 0.5s linear;
+   }
 }
 
 
