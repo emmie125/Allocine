@@ -5,8 +5,9 @@ import videoIcon from '@iconify-icons/file-icons/video';
 import videoClip20Regular from '@iconify-icons/fluent/video-clip-20-regular';
 
 import { Slide,Fade } from 'react-slideshow-image';
-import { ContainerSlider } from './SliderStyle';
+import { ContainerSlider, LinkStyleMore,LinkStyleCat } from './SliderStyle';
 import Button from '../button/Button';
+
 
 const proprietes={
     duration:5000,
@@ -41,8 +42,8 @@ export const Fader = ({images_Api,movies}) => {
                       <h2 className="Container-slider__title">{`Title : ${movie.title}`}</h2>
                     </div>
                     <div className="Container-slider__btn-cat">
-                      <Button btnmore label="More"  />
-                      <Button btncat label="Categorys"  />
+                     <LinkStyleMore to="/details"> <Button btnmore label="More"  /></LinkStyleMore>
+                      <LinkStyleCat to="/category"><Button btncat label="Categorys"  /></LinkStyleCat>
                      
                     </div>
                     <div className="Container-slider__btn-video">

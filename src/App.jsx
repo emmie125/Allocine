@@ -6,6 +6,8 @@ import { Header } from "./components/header/Header";
 import { Container } from "./Styled";
 import { Home } from "./components/home/Home";
 import {Fader} from "./components/slider/Slider";
+import { Route, Switch } from "react-router-dom";
+import { Details } from "./components/details/Details";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -72,9 +74,16 @@ function App() {
         iconButton={iconToggle}
       />
       <section>
-        <Fader movies={movies} images_Api={images_Api}/>
-        <Home movies={movies} images_Api={images_Api}/>
+        <Fader movies={movies} images_Api={images_Api} />
       </section>
+      <Switch>
+        <Route exact path="/">
+          <Home movies={movies} images_Api={images_Api} />
+        </Route>
+        <Route path="/details">
+          <Details />
+        </Route>
+      </Switch>
     </Container>
   );
 }

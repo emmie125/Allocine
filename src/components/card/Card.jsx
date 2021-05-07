@@ -5,6 +5,8 @@ import Button from '../button/Button'
 import { CardStyle, ListCardStyle } from './CardStyle';
 import { Icon, InlineIcon } from '@iconify/react';
 import moreInformation from '@iconify-icons/openmoji/more-information';
+import { Link, Route, Switch } from 'react-router-dom';
+import {Details} from '../details/Details'
 
 
 export const Card = (props) => {
@@ -16,7 +18,8 @@ export const Card = (props) => {
       <div className="card-black"></div>
       <div className="card-description">
        <div className="card-title"> <h3>{props.title}</h3></div>
-        <Button secondary label="more" iconButton={<Icon icon={moreInformation}/>}/>
+        <Link to={"/details"}><Button secondary label="more" iconButton={<Icon icon={moreInformation}/>}/></Link>
+        
         <p>{props.date}</p>
         <p>{props.vote}</p>
       </div>

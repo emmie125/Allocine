@@ -26,18 +26,20 @@ ${({btncat})=> btncat && css`
     background-image:linear-gradient(to left bottom,rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.1));
     border:1px solid #08131b;
     border-radius:5px;
-   padding:2% 1%;
+   padding:2% 2%;
     width:200px;
     color:#08131b;
     margin-left:2%;
+    height: 100%;
 `}
 ${({btnmore})=> btnmore && css`
     color:white;
     border:1px solid #08131b;
     border-radius:5px;
-    padding:2% 1%;
+    padding:2% 2%;
     width:200px;
     background-color:#08131b;
     background-image:linear-gradient(to left bottom,rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2));
     margin-left:2%;
+    height: 100%;
 `}`

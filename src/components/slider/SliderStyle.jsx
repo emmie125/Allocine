@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 
@@ -54,5 +55,12 @@ width:100%;
    }
 }
 
+`
+export const LinkStyleMore = styled(Link)`
+text-decoration:none;
+`
 
+export const LinkStyleCat = styled(Link)`
+text-decoration:none;
+margin-left:2%;
 `
