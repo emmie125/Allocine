@@ -19,25 +19,24 @@ width:100%;
 }
 .Container-slider__title{
     color:#FFAE00 !important;
-    width:45%;
+    width:55%;
     font-size:25px;
     position: absolute;
     left: 5%;
-    top:60%;
+    top:65%;
     height: 20%;
     z-index: 3;
     background:linear-gradient(20deg,to bottom left,rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.7));
 }
 .Container-slider__btn-cat{
     position: absolute;
-    top:80%;
-    left:65%;
+    top:85%;
+    left:5%;
     display:flex;
     width:55%;
 }
 .Container-slider__btn-video{
     clip-path: circle(50% at 50% 50%);
-    border:1px solid #FFAE00 ;
     position: absolute;
     background-color:#141212;
     background-image:linear-gradient(to left bottom,rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.1));

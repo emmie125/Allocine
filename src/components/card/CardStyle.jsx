@@ -44,7 +44,7 @@ import styled from 'styled-components'
      h3{
         font-size:10px;
         font-style:italic;
-        color:#24445C;
+        color:#08131b;
      }
      
      .card-title{

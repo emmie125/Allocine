@@ -41,7 +41,7 @@ export const Fader = ({images_Api,movies}) => {
                       <h2 className="Container-slider__title">{`Title : ${movie.title}`}</h2>
                     </div>
                     <div className="Container-slider__btn-cat">
-                      <Button btncat label="More"  />
+                      <Button btnmore label="More"  />
                       <Button btncat label="Categorys"  />
                      
                     </div>

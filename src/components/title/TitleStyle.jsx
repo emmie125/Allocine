@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const TitleStyle = styled.div`
-color:#24445C;
+color:#08131b;
 background-color:#FFAE00;
 width:35%;
 padding:2.5%;

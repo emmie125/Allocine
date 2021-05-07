@@ -1,5 +1,5 @@
 import {ButtonStyle} from './ButtonStyle'
 const Button = (props)=> {
-    return <ButtonStyle btncat={props.btncat} secondary={props.secondary} className={props.className} onClick={props.onClick} placeholder={props.placeholder}>{props.label}{props.iconButton}</ButtonStyle>
+    return <ButtonStyle btnmore={props.btnmore} btncat={props.btncat} secondary={props.secondary} className={props.className} onClick={props.onClick} placeholder={props.placeholder}>{props.label}{props.iconButton}</ButtonStyle>
 }
 export default Button

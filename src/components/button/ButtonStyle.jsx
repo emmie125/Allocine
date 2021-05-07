@@ -24,10 +24,20 @@ border-radius:3px;
 ${({btncat})=> btncat && css`
     background-color:white;
     background-image:linear-gradient(to left bottom,rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.1));
-    border:1px solid #24445C;
+    border:1px solid #08131b;
     border-radius:5px;
    padding:1% 0.5%;
+    width:120px;
+    color:#08131b;
+    margin-left:2%;
+`}
+${({btnmore})=> btnmore && css`
+    color:white;
+    border:1px solid #08131b;
+    border-radius:5px;
+    padding:1% 0.5%;
     width:100px;
-    color:#24445C;
+    background-color:#08131b;
+    background-image:linear-gradient(to left bottom,rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2));
     margin-left:2%;
 `}`
