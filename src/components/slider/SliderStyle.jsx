@@ -20,10 +20,10 @@ width:100%;
 .Container-slider__title{
     color:#FFAE00 !important;
     width:55%;
-    font-size:25px;
+    font-size:35px;
     position: absolute;
     left: 5%;
-    top:65%;
+    top:70%;
     height: 20%;
     z-index: 3;
     background:linear-gradient(20deg,to  bottom left,rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.7));
@@ -42,9 +42,10 @@ width:100%;
     background-image:linear-gradient(to left bottom,rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.1));
     top:40%;
     left:45%;
-    padding:2%;
+    padding:3%;
     opacity: 0.4;
     cursor:pointer;
+    font-size:20px !important;
 
    &:hover{
     transform:scale(1.03);

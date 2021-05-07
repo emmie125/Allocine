@@ -5,7 +5,7 @@ export const ButtonStyle = styled.button`
 background-color:transparent;
 border: none;
 color:#FFAE00;
-font-size:20px;
+font-size:30px;
 cursor:pointer;
 outline:transparent;
 &:active{
@@ -26,8 +26,8 @@ ${({btncat})=> btncat && css`
     background-image:linear-gradient(to left bottom,rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.1));
     border:1px solid #08131b;
     border-radius:5px;
-   padding:1% 0.5%;
-    width:120px;
+   padding:2% 1%;
+    width:200px;
     color:#08131b;
     margin-left:2%;
 `}
@@ -35,8 +35,8 @@ ${({btnmore})=> btnmore && css`
     color:white;
     border:1px solid #08131b;
     border-radius:5px;
-    padding:1% 0.5%;
-    width:100px;
+    padding:2% 1%;
+    width:200px;
     background-color:#08131b;
     background-image:linear-gradient(to left bottom,rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2));
     margin-left:2%;

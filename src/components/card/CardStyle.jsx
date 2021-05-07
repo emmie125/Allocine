@@ -39,10 +39,10 @@ import styled from 'styled-components'
      margin-top:2%;
      margin-left:2%;
      p{
-         font-size:8px;
+         font-size:14px;
      }
      h3{
-        font-size:10px;
+        font-size:16px;
         font-style:italic;
         color:#08131b;
      }

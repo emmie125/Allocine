@@ -12,8 +12,8 @@ clip-path: inset(5% 20% 15% 10%);
 text-align:center;
 position: absolute;
 left:0;
-top:0em;
+top:0;
 h2{
     margin-left:15%;
-    font-size:14px;
+    font-size:25px;
 }`
