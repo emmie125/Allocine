@@ -41,10 +41,13 @@ export const Fader = ({images_Api,movies}) => {
                       <h2 className="Container-slider__title">{`Title : ${movie.title}`}</h2>
                     </div>
                     <div className="Container-slider__btn-cat">
-                      <Button btncat label="All" iconButton={<Icon icon={bxCategory}/> } />
+                      <Button btncat label="More"  />
+                      <Button btncat label="Categorys"  />
+                     
                     </div>
                     <div className="Container-slider__btn-video">
                       <Button  iconButton={<Icon icon={videoClip20Regular}/>}/>
+                      
                     </div>
                   </div>
                 );

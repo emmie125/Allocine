@@ -26,7 +26,8 @@ ${({btncat})=> btncat && css`
     background-image:linear-gradient(to left bottom,rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.1));
     border:1px solid #24445C;
     border-radius:5px;
-   padding:1%;
-    width:80px;
+   padding:1% 0.5%;
+    width:100px;
     color:#24445C;
+    margin-left:2%;
 `}`

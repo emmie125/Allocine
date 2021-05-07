@@ -15,22 +15,25 @@ width:100%;
     height:100vh;
     background-repeat:no-repeat;
     background-position:center;
+    background-image:linear-gradient(0deg,to bottom left,rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
 }
 .Container-slider__title{
     color:#FFAE00 !important;
-    width:50%;
+    width:45%;
     font-size:25px;
     position: absolute;
-    left: 45%;
-    top:70%;
+    left: 5%;
+    top:60%;
     height: 20%;
     z-index: 3;
-    background:linear-gradient(0deg,to bottom left,rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7));
+    background:linear-gradient(20deg,to bottom left,rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.7));
 }
 .Container-slider__btn-cat{
     position: absolute;
     top:80%;
-    left:5%;
+    left:65%;
+    display:flex;
+    width:55%;
 }
 .Container-slider__btn-video{
     clip-path: circle(50% at 50% 50%);
@@ -41,7 +44,7 @@ width:100%;
     top:40%;
     left:45%;
     padding:2%;
-    opacity: 0.6;
+    opacity: 0.4;
     cursor:pointer;
 }
 
