@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const genre = (props) => {
+export const Genre = (props) => {
     return (
         <div>
             

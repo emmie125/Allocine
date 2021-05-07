@@ -7,7 +7,7 @@ position:fixed;
 background-color:#24445C;
 background-image:linear-gradient(to left bottom,rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7));
 display:flex;
-justify-content:space-evenly;
+justify-content:space-evenly; 
 align-items:center;
 z-index:1000;
 
@@ -15,9 +15,9 @@ z-index:1000;
     display:flex;
     justify-content: center;
     text-align:end;
-    width:50%;
+    width:30%;
     height:50%;
-    padding:0% 5%;
+    padding:0% 2%;
 }
 
 .btn__search{

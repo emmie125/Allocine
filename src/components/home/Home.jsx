@@ -6,6 +6,7 @@ import HomeStyle from './HomeStyle'
 export const Home = ({images_Api,movies}) => {
     return (
       <HomeStyle>
+        
         <Title title="The recent movies"/>
         <div className="home-card">
             <ListCard movies={movies} images_Api={images_Api}/>

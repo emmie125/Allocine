@@ -1,8 +1,10 @@
 import React from 'react';
 import { Icon, InlineIcon } from '@iconify/react';
 import bxCategory from '@iconify-icons/bx/bx-category';
+import videoIcon from '@iconify-icons/file-icons/video';
+import videoClip20Regular from '@iconify-icons/fluent/video-clip-20-regular';
 
-import { Slide } from 'react-slideshow-image';
+import { Slide,Fade } from 'react-slideshow-image';
 import { ContainerSlider } from './SliderStyle';
 import Button from '../button/Button';
 
@@ -14,17 +16,17 @@ const proprietes={
     arrows:false
 };
 
-export const Slider = ({images_Api,movies}) => {
+export const Fader = ({images_Api,movies}) => {
     return (
       <ContainerSlider>
-        <Slide {...proprietes}>
+        <Fade {...proprietes}>
          
             {movies.map((movie)=>{
                 console.log(images_Api + movie.backdrop_path);
                 return (
                   <div className="each-slide">
                     <div
-                      className="ContainerSlider__Images"
+                      className="Container-slider__images"
                       style={{
                             background: `linear-gradient(to left bottom,rgba(4, 13, 42, 0.287),rgba(0, 0, 0, 0.7)),url(${
                           images_Api + movie.backdrop_path
@@ -36,18 +38,20 @@ export const Slider = ({images_Api,movies}) => {
                     >
                     </div>
                     <div>
-                      <h2 className="ContainerSlider__Title">{`Title : ${movie.title}`}</h2>
+                      <h2 className="Container-slider__title">{`Title : ${movie.title}`}</h2>
                     </div>
-                    <div>
-                      {/* <Button <Icon icon={bxCategory} />/>
-                      <Button/> */}
+                    <div className="Container-slider__btn-cat">
+                      <Button btncat label="All" iconButton={<Icon icon={bxCategory}/> } />
+                    </div>
+                    <div className="Container-slider__btn-video">
+                      <Button  iconButton={<Icon icon={videoClip20Regular}/>}/>
                     </div>
                   </div>
                 );
             })}
           
-        </Slide>
+        </Fade>
       </ContainerSlider>
     );
 }
-export default Slider;
+//export default Fader;

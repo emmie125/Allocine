@@ -5,7 +5,6 @@ import styled from 'styled-components'
  width:45%;
  margin:2% 2%;
  box-shadow: 0px 0px 3px black;
- border: 1px solid white;
  position: relative;
  border-radius:5px;
  .card-image{
@@ -19,6 +18,8 @@ import styled from 'styled-components'
          border-bottom-left-radius:2.5px;
          &:hover{
             transform:scale(1.03);
+            border-top-left-radius:2.5px;
+            border-bottom-left-radius:2.5px;
             transition: all 0.5s linear;
          }
      }

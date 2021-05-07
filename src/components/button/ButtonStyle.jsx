@@ -20,4 +20,13 @@ width:30%;
 font-size:12px;
 margin:3% 0%;
 border-radius:3px;
+`}
+${({btncat})=> btncat && css`
+    background-color:white;
+    background-image:linear-gradient(to left bottom,rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.1));
+    border:1px solid #24445C;
+    border-radius:5px;
+   padding:1%;
+    width:80px;
+    color:#24445C;
 `}`

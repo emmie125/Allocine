@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 import { Icon, InlineIcon } from "@iconify/react";
-import { Card, Grid, Segment } from "semantic-ui-react";
 import hamburgerMenu from "@iconify-icons/cil/hamburger-menu";
 import crossIcon from "@iconify-icons/akar-icons/cross";
 import { Header } from "./components/header/Header";
-import CardExampleCard from "./components/card/Card";
 import { Container } from "./Styled";
 import { Home } from "./components/home/Home";
-import Slider from "./components/slider/Slider";
+import {Fader} from "./components/slider/Slider";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -74,7 +72,7 @@ function App() {
         iconButton={iconToggle}
       />
       <section>
-        <Slider movies={movies} images_Api={images_Api}/>
+        <Fader movies={movies} images_Api={images_Api}/>
         <Home movies={movies} images_Api={images_Api}/>
       </section>
     </Container>
