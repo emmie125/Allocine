@@ -16,6 +16,8 @@ width:100%;
     height:100vh;
     background-repeat:no-repeat;
     background-position:center;
+    background-color : rgb(8,19,27);
+    background-image: linear-gradient(0deg, rgba(8,19,27,1) 0%, rgba(8,19,27,0.8869922969187675) 83%, rgba(8,19,27,1) 100%);
     background-image:linear-gradient(0deg,to bottom left,rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
 }
 .Container-slider__title{

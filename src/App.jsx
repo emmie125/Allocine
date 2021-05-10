@@ -64,8 +64,14 @@ function App() {
     }
     return moviesByGenre;
   };
+  const foundMovie=(idMovie)=>{
+    const findMovie=movies.find(({id})=>{
+      return idMovie=id
+    });
+    return findMovie;
+  }
   console.log(getMoviesByGenre());
-
+  console.log("Film trouvé"+foundMovie());
   return (
     <Container>
       <Header
@@ -73,16 +79,13 @@ function App() {
         etatNavbar={etatNavbar}
         iconButton={iconToggle}
       />
-      <section>
-        <Fader movies={movies} images_Api={images_Api} />
-      </section>
       <Switch>
         <Route exact path="/">
-          <Home movies={movies} images_Api={images_Api} />
+          
+            <Fader movies={movies} images_Api={images_Api} />
+            <Home movies={movies} images_Api={images_Api} />
         </Route>
-        <Route path="/details">
-          <Details />
-        </Route>
+        <Route path="/movie/:id" render={({match})=> <Details match={match}/>}/>
       </Switch>
     </Container>
   );

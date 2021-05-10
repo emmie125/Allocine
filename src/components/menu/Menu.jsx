@@ -5,13 +5,13 @@ export const Menu = ()=>{
         <MenuStyle>
             <ul>
                 <li>
-                  <LinkStyle to="/">Accueil</LinkStyle>
+                  <LinkStyle to="/">Home</LinkStyle>
                 </li>
                 <li>
-                  <LinkStyle to="/category">Catégories</LinkStyle>
+                  <LinkStyle to="/category">Category</LinkStyle>
                 </li>
                 <li>
-                  <LinkStyle to="/contact">Contactez-nous</LinkStyle>
+                  <LinkStyle to="/contact">Contactez-us</LinkStyle>
                 </li>
               </ul>
         </MenuStyle>

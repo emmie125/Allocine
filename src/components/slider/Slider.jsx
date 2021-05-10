@@ -33,8 +33,6 @@ export const Fader = ({images_Api,movies}) => {
                           images_Api + movie.backdrop_path
                         })`,
                         backgroundSize : "cover",
-                        
-                    
                       }}
                     >
                     </div>
@@ -42,7 +40,7 @@ export const Fader = ({images_Api,movies}) => {
                       <h2 className="Container-slider__title">{`Title : ${movie.title}`}</h2>
                     </div>
                     <div className="Container-slider__btn-cat">
-                     <LinkStyleMore to="/details"> <Button btnmore label="More"  /></LinkStyleMore>
+                     <LinkStyleMore  to={`/movie/${movie.id}`} > <Button btnmore label="More"  /></LinkStyleMore>
                       <LinkStyleCat to="/category"><Button btncat label="Categorys"  /></LinkStyleCat>
                      
                     </div>

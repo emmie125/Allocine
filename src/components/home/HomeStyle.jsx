@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 const HomeStyle= styled.div`
 
-background-color:#24445C;
-background:linear-gradient(to left bottom,rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7));
 position: relative;
 .Title{
     position: absolute;

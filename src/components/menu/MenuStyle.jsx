@@ -14,12 +14,17 @@ li{
     list-style-type: none;
     &:hover,&:active{
         background-color:#68A8DA;
+        color:black;
         transition: all linear 0.9s;
         
         
     }
+    
    
 }`
 export const LinkStyle=styled(Link)`
 color:#FFAE00;
+&:hover{
+    color:black;
+}
 `

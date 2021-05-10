@@ -1,14 +1,16 @@
-import styled from 'styled-components'
+
+import styled,{css}from 'styled-components'
 
  export const CardStyle = styled.div`
  display:flex;
- width:45%;
+ flex-direction:column;
+ width:25%;
  margin:2% 2%;
  box-shadow: 0px 0px 3px black;
  position: relative;
  border-radius:5px;
  .card-image{
-     width:50%;
+     width:100%;
      overflow:hidden;
     
      img{
@@ -33,7 +35,7 @@ import styled from 'styled-components'
          width:50%;
      }
  .card-description{
-    width:50%;
+    width:100%;
      display:flex;
      flex-direction: column;
      margin-top:2%;
@@ -52,7 +54,10 @@ import styled from 'styled-components'
         width:70%;
      }
  }
-`;
+${({card})=> card && css`
+display:flex;
+ width:45%;
+ margin:2% 2%;`}`;
 export const ListCardStyle = styled.div`
 display: flex;
 flex-wrap:wrap;

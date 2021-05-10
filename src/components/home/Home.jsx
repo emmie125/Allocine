@@ -5,13 +5,13 @@ import { Details } from '../details/Details';
 import { Title } from '../title/Title';
 import HomeStyle from './HomeStyle'
 
-export const Home = ({images_Api,movies}) => {
+export const Home = ({images_Api,movies,onClick}) => {
     return (
       <HomeStyle>
         
         <Title title="The recent movies"/>
         <div className="home-card">
-            <ListCard movies={movies} images_Api={images_Api}/>
+            <ListCard movies={movies} images_Api={images_Api} onClick={onClick}/>
         </div>
         <Title className="Title" title="The movies"/>
         <div className="home-card">
