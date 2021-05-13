@@ -2,13 +2,13 @@ import React,{useState} from 'react'
 import { Button, Header, Icon, Modal } from 'semantic-ui-react'
 
 function ModalExampleBasic(props) {
-  const [open, setOpen] = useState(false)
+  
 
   return (
     <Modal
       basic
-      onClose={() => setOpen(false)}
-      onOpen={() => setOpen(true)}
+      onClose={props.onClose}
+      onOpen={props.onOpen}
       open={props.open}
       size='small'
      
@@ -21,12 +21,10 @@ function ModalExampleBasic(props) {
             </>
       </Modal.Content>
       <Modal.Actions>
-        <Button basic color='red' inverted onClick={() => setOpen(false)}>
+        <Button basic color='red' inverted onClick={props.onClose}>
           <Icon name='remove' /> No
         </Button>
-        <Button color='green' inverted onClick={() => setOpen(false)}>
-          <Icon name='checkmark' /> Yes
-        </Button>
+        
       </Modal.Actions>
     </Modal>
   )

@@ -30,8 +30,9 @@ export const Details = ({match}) => {
     const[actors,setActors] = useState([]);
     const [similarMovies, setSimilarMovies]=useState([]);
     const [video,setVideo] = useState();
+    const [open, setOpen] = useState(false)
+    
 
-    const[hasvideo,setHasVideo] = useState(false);
     const movie_id= match.url;
     const images_Api = "https://image.tmdb.org/t/p/w1280";
     const details_Movies_Api=`https://api.themoviedb.org/3${movie_id}?api_key=eed93b57e7a406131996aebb2acb0aaa&language=en-US`;
@@ -76,7 +77,7 @@ export const Details = ({match}) => {
       )
     }
     const showVideo =()=>(
-      setHasVideo(true)
+      setOpen(true)
     );
     return (
       <DetailStyle>
@@ -172,7 +173,7 @@ export const Details = ({match}) => {
           </Carousel>
         </div>
         <div className="container-recommandation"></div>
-        <ModalExampleBasic key={video} open={hasvideo}/>
+        <ModalExampleBasic key={video} open={open} onClose={()=>setOpen(false)} onOpen={()=>setOpen(true)}/>
       </DetailStyle>
     );
 }
