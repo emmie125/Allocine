@@ -17,6 +17,7 @@ const proprietes={
     arrows:false
 };
 
+
 export const Fader = ({images_Api,movies}) => {
     return (
       <ContainerSlider>
@@ -40,7 +41,7 @@ export const Fader = ({images_Api,movies}) => {
                       <h2 className="Container-slider__title">{`Title : ${movie.title}`}</h2>
                     </div>
                     <div className="Container-slider__btn-cat">
-                     <LinkStyleMore  to={`/movie/${movie.id}`} > <Button btnmore label="More"  /></LinkStyleMore>
+                     <LinkStyleMore  to={`${movie.media_type}/${movie.id}`} > <Button btnmore label="More"  /></LinkStyleMore>
                       <LinkStyleCat to="/category"><Button btncat label="Categorys"  /></LinkStyleCat>
                      
                     </div>
@@ -56,4 +57,10 @@ export const Fader = ({images_Api,movies}) => {
       </ContainerSlider>
     );
 }
+
+
+
+
+
+
 //export default Fader;

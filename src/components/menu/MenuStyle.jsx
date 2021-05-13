@@ -12,12 +12,10 @@ li{
     padding:1.5%;
     cursor:pointer;
     list-style-type: none;
-    &:hover,&:active{
+    &:hover {
         background-color:#68A8DA;
         color:black;
         transition: all linear 0.9s;
-        
-        
     }
     
    

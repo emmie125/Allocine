@@ -16,7 +16,7 @@ function App() {
   const [etatNavbar, setNavbar] = useState(false);
   const [iconToggle, seticonToggle] = useState(<Icon icon={hamburgerMenu} />);
 
-  const featured_Api = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=eed93b57e7a406131996aebb2acb0aaa&page=1`;
+  const featured_Api = `https://api.themoviedb.org/3/trending/all/day?api_key=eed93b57e7a406131996aebb2acb0aaa`;
   const search_Api =
     "https://api.themoviedb.org/3/search/movie?&api_key=eed93b57e7a406131996aebb2acb0aaa&query=";
   const images_Api = "https://image.tmdb.org/t/p/w1280";
@@ -86,6 +86,7 @@ function App() {
             <Home movies={movies} images_Api={images_Api} />
         </Route>
         <Route path="/movie/:id" render={({match})=> <Details match={match}/>}/>
+        <Route path="/tv/:id" render={({match})=> <Details match={match}/>}/>
       </Switch>
     </Container>
   );

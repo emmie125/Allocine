@@ -11,7 +11,7 @@ export const Menu = ()=>{
                   <LinkStyle to="/category">Category</LinkStyle>
                 </li>
                 <li>
-                  <LinkStyle to="/contact">Contactez-us</LinkStyle>
+                  <LinkStyle to="/contact">Contact-us</LinkStyle>
                 </li>
               </ul>
         </MenuStyle>

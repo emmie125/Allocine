@@ -4,8 +4,8 @@ import styled,{css}from 'styled-components'
  export const CardStyle = styled.div`
  display:flex;
  flex-direction:column;
- width:25%;
- margin:2% 2%;
+ width:30%;
+ margin:1% 1%;
  box-shadow: 0px 0px 3px black;
  position: relative;
  border-radius:5px;
@@ -53,13 +53,15 @@ import styled,{css}from 'styled-components'
         text-align:left;
         width:70%;
      }
+     .start{
+         color:#08131b !important;
+     }
  }
-${({card})=> card && css`
-display:flex;
- width:45%;
- margin:2% 2%;`}`;
+`;
 export const ListCardStyle = styled.div`
 display: flex;
 flex-wrap:wrap;
-margin:2% 2%;
-width:100%;`
+justify-content:center;
+margin:3% 2%;
+width:96%;
+`
