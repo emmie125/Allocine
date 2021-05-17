@@ -8,13 +8,13 @@ import { Menu } from "../menu/Menu";
 
 
  const Navbar = (props)=>{
-  
+  console.log(props)
    
     return (
       <NavbarStyles>
         <div className='navbar__container'>
           <Button onClick={props.toggleClick} iconButton={props.iconButton}/>
-          {props.etatNavbar?
+          {props.navbarState?
             <Menu/>
           :
           <div></div>}

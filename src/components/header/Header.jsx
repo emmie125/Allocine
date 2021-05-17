@@ -12,7 +12,7 @@ export const Header = (props)=>{
     return(
         <HeaderStyle>
             
-            <Navbar toggleClick={props.toggleClick} etatNavbar = {props.etatNavbar} iconButton={props.iconButton} className="header__navbar"/>
+            <Navbar toggleClick={props.toggleClick} navbarState = {props.navbarState} iconButton={props.iconButton} className="header__navbar"/>
             <div className="header__search">
                 <Input/>
                 <Button onClick={props.onClick} iconButton={<Icon icon={searchOutlined} />} className="btn__search"/>

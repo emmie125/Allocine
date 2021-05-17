@@ -16,13 +16,12 @@ export const Card = (props) => {
       <div className="card-image">
         <img src={props.src} alt={props.alt} />
       </div>
-      <div className="card-black"></div>
+     
       <div className="card-description">
        <div className="card-title"> <h3>{props.title}</h3></div>
         <Link to={`/${props.media_type}/${props.id}`}><Button secondary label="more"  onClick={props.onClick} iconButton={<Icon icon={moreInformation}/>}/></Link>
-        
         <p>{props.date}</p>
-        <p> <Start min={ props.vote} className="start"/></p>
+        <p > <Start min={ props.vote} className="start"/></p>
       </div>
     </CardStyle>
   )
@@ -30,14 +29,16 @@ export const Card = (props) => {
 
 export default Card
  
- export const ListCard = ({images_Api,movies,onClick}) => {
+ export const ListCard = ({imagesApi,movies,onClick,position}) => {
    return (
      <ListCardStyle>
        {movies.map((movie,index)=>{
+         console.log(imagesApi + movie.poster_path)
          return (
-           index<6 ? <>
+           index<position ? <>
            <Card
-             src={images_Api + movie.poster_path}
+           key={movie.id}
+             src={imagesApi + movie.poster_path}
              title={movie.title}
              alt={movie.title}
              iconButton=""

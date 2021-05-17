@@ -5,18 +5,22 @@ import { Details } from '../details/Details';
 import { Title } from '../title/Title';
 import HomeStyle from './HomeStyle'
 
-export const Home = ({images_Api,movies,onClick}) => {
+export const Home = ({imagesApi,movies,series,onClick}) => {
     return (
       <HomeStyle>
         
-        <Title title="The recent movies"/>
-        <div className="home-card">
-            <ListCard movies={movies} images_Api={images_Api} onClick={onClick}/>
+        <div className="containerTrending">
+            <Title title="Recent movies"  />
+            <div className="card">
+                <ListCard movies={movies} imagesApi={imagesApi} position={20} onClick={onClick}/>
+            </div>
         </div>
-        <Title className="Title" title="The movies"/>
-        <div className="home-card">
-            <ListCard movies={movies} images_Api={images_Api}/>
-        </div>
+       <div className="containerTrending">
+        <Title  title="Recent on Tv"/>
+          <div className="card">
+              <ListCard movies={series} imagesApi={imagesApi} position={20} onClick={onClick}/>
+          </div>
+       </div>
         
       </HomeStyle>
     );

@@ -9,10 +9,11 @@ text-align:center;
 position:absolute;
 color:#FFAE00;
 li{
-    padding:1.5%;
+    padding:2% 1.5%;
     cursor:pointer;
     list-style-type: none;
-    &:hover {
+   
+    &:hover Link{
         background-color:#68A8DA;
         color:black;
         transition: all linear 0.9s;
@@ -22,7 +23,9 @@ li{
 }`
 export const LinkStyle=styled(Link)`
 color:#FFAE00;
+font-size:25px;
+padding:2% 0%;
 &:hover{
-    color:black;
+    color:white;
 }
 `

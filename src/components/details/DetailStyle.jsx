@@ -47,7 +47,7 @@ flex-direction:column;
     display:flex;
     flex-direction:column;
     box-shadow: 0px 0px 3px black;
-    width:55%;
+    width:100%;
     height:80%;
     margin: 2% 2%;
   

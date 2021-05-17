@@ -7,6 +7,7 @@ import videoClip20Regular from '@iconify-icons/fluent/video-clip-20-regular';
 import { Slide,Fade } from 'react-slideshow-image';
 import { ContainerSlider, LinkStyleMore,LinkStyleCat } from './SliderStyle';
 import Button from '../button/Button';
+import ModalExampleBasic from '../modal/Modal';
 
 
 const proprietes={
@@ -18,20 +19,20 @@ const proprietes={
 };
 
 
-export const Fader = ({images_Api,movies}) => {
+export const Fader = ({imagesApi,movies}) => {
     return (
       <ContainerSlider>
         <Fade {...proprietes}>
          
             {movies.map((movie)=>{
-                console.log(images_Api + movie.backdrop_path);
+                
                 return (
-                  <div className="each-slide">
+                  <div className="each-slide" key={movie.id}>
                     <div
                       className="Container-slider__images"
                       style={{
                             background: `linear-gradient(to left bottom,rgba(4, 13, 42, 0.287),rgba(0, 0, 0, 0.7)),url(${
-                          images_Api + movie.backdrop_path
+                          imagesApi + movie.backdrop_path
                         })`,
                         backgroundSize : "cover",
                       }}
@@ -47,8 +48,8 @@ export const Fader = ({images_Api,movies}) => {
                     </div>
                     <div className="Container-slider__btn-video">
                       <Button  iconButton={<Icon icon={videoClip20Regular}/>}/>
-                      
                     </div>
+                    {/* <ModalExampleBasic /> */}
                   </div>
                 );
             })}

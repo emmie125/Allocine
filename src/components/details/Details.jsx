@@ -15,16 +15,10 @@ import { Title } from '../title/Title';
 import Card from "../card/Card";
 import ModalExampleBasic from "../modal/Modal";
 
-const proprietesSlider={
-    duration:5000,
-    transitionDuration:500,
-    infinite:true,
-    indicators:false,
-    arrows:true
-  };
+
 
 export const Details = ({match}) => {
-    console.log("url movies",match.url);
+   
 
     const [detailsMovie,setDetailsMovie] = useState();
     const[actors,setActors] = useState([]);
@@ -39,6 +33,7 @@ export const Details = ({match}) => {
     const actor_Api=`https://api.themoviedb.org/3${movie_id}/credits?api_key=eed93b57e7a406131996aebb2acb0aaa&language=en-US`;
     const similarMovie_Api=`https://api.themoviedb.org/3${movie_id}/similar?api_key=eed93b57e7a406131996aebb2acb0aaa&language=en-US&page=1`
     const video_Api=`https://api.themoviedb.org/3/${movie_id}/videos?api_key=eed93b57e7a406131996aebb2acb0aaa&language=en-US`
+    
     useEffect(() => {
         fetch(details_Movies_Api)
           .then((res) => res.json())
@@ -64,18 +59,11 @@ export const Details = ({match}) => {
               console.log(data)});
           window.scrollTo(0,0);
     }, [details_Movies_Api])
+
     console.log(detailsMovie);
     console.log("les acteurs",actors);
     console.log("les films similaire",similarMovies)
 
-    const  myArrow = ({ type, onClick, isEdge }) => {
-      const pointer = type === consts.PREV ? '👈': '👉';
-      return (
-        <Button onClick={onClick} disabled={isEdge}>
-          {pointer}
-        </Button>
-      )
-    }
     const showVideo =()=>(
       setOpen(true)
     );
@@ -133,7 +121,7 @@ export const Details = ({match}) => {
         </ContainerDetails>
         <div className="container-casting">
           <Title className="Title" title="Casting"/>
-          <Carousel itemsToScroll={4} pagination={false} itemsToShow={4}   focusOnSelect={true}>
+          <Carousel itemsToScroll={4} pagination={false} itemsToShow={6}   focusOnSelect={true}>
             {actors=== undefined ||actors.map((actor) => {
              return (
                 <div className="container-box">
@@ -173,7 +161,7 @@ export const Details = ({match}) => {
           </Carousel>
         </div>
         <div className="container-recommandation"></div>
-        <ModalExampleBasic key={video} open={open} onClose={()=>setOpen(false)} onOpen={()=>setOpen(true)}/>
+        <ModalExampleBasic open={open} onClose={()=>setOpen(false)} onOpen={()=>setOpen(true)}/>
       </DetailStyle>
     );
 }

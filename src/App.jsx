@@ -8,37 +8,47 @@ import { Home } from "./components/home/Home";
 import {Fader} from "./components/slider/Slider";
 import { Route, Switch } from "react-router-dom";
 import { Details } from "./components/details/Details";
+import { Category } from "./components/category/Category";
 
 function App() {
-  const [movies, setMovies] = useState([]);
+  const [movies, SetMovies] = useState([]);
+  const [series, SetSeries] = useState([]);
   const [genres, setGenres] = useState([]);
 
-  const [etatNavbar, setNavbar] = useState(false);
+  const [navbarState, setNavbarState] = useState(false);
   const [iconToggle, seticonToggle] = useState(<Icon icon={hamburgerMenu} />);
 
-  const featured_Api = `https://api.themoviedb.org/3/trending/all/day?api_key=eed93b57e7a406131996aebb2acb0aaa`;
+  const trendingtvApi=`https://api.themoviedb.org/3/trending/series/day?api_key=eed93b57e7a406131996aebb2acb0aaa`
+  const trendingMoviesApi = `https://api.themoviedb.org/3/trending/movie/day?api_key=eed93b57e7a406131996aebb2acb0aaa`;
   const search_Api =
     "https://api.themoviedb.org/3/search/movie?&api_key=eed93b57e7a406131996aebb2acb0aaa&query=";
-  const images_Api = "https://image.tmdb.org/t/p/w1280";
-  const genreMovies_Api =
-    "https://api.themoviedb.org/3/genre/movie/list?api_key=eed93b57e7a406131996aebb2acb0aaa&language=en-US";
+  const imagesApi = "https://image.tmdb.org/t/p/w1280";
+    const moviesGenresApi =
+      "https://api.themoviedb.org/3/genre/movie/list?api_key=eed93b57e7a406131996aebb2acb0aaa&language=en-US";
 
   const toggleClick = (e) => {
     e.preventDefault();
-    setNavbar(!etatNavbar);
+    setNavbarState(!navbarState);
     seticonToggle(
-      etatNavbar ? <Icon icon={hamburgerMenu} /> : <Icon icon={crossIcon} />
+      navbarState ? <Icon icon={hamburgerMenu} /> : <Icon icon={crossIcon} />
     );
   };
 
+  async function getTrending(){
+    const resultsMovies = await fetch(trendingMoviesApi);
+    let dataMovies = await resultsMovies.json();
+    SetMovies(dataMovies.results);
+    const resultseries = await fetch(trendingtvApi);
+    let dataseries = await resultseries.json();
+    dataseries=dataseries.results;
+    
+    SetSeries(dataseries);
+    
+  }
   useEffect(() => {
-    fetch(featured_Api)
-      .then((res) => res.json())
-      .then((data) => {
-        console.dir(data.results);
-        setMovies(data.results);
-      });
-    fetch(genreMovies_Api)
+      getTrending();
+
+       fetch(moviesGenresApi)
       .then((res) => res.json())
       .then((data) => {
         console.log(data.genres);
@@ -64,29 +74,27 @@ function App() {
     }
     return moviesByGenre;
   };
-  const foundMovie=(idMovie)=>{
-    const findMovie=movies.find(({id})=>{
-      return idMovie=id
-    });
-    return findMovie;
-  }
-  console.log(getMoviesByGenre());
-  console.log("Film trouvé"+foundMovie());
+  
+  console.log(series);
+  
   return (
     <Container>
       <Header
         toggleClick={toggleClick}
-        etatNavbar={etatNavbar}
+        navbarState={navbarState}
         iconButton={iconToggle}
       />
       <Switch>
         <Route exact path="/">
           
-            <Fader movies={movies} images_Api={images_Api} />
-            <Home movies={movies} images_Api={images_Api} />
+            <Fader movies={movies} imagesApi={imagesApi} />
+            <Home movies={movies} imagesApi={imagesApi} series={series} />
         </Route>
         <Route path="/movie/:id" render={({match})=> <Details match={match}/>}/>
         <Route path="/tv/:id" render={({match})=> <Details match={match}/>}/>
+        <Route path="/category" >
+          <Category/>
+        </Route>
       </Switch>
     </Container>
   );

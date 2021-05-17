@@ -4,18 +4,20 @@ import styled,{css}from 'styled-components'
  export const CardStyle = styled.div`
  display:flex;
  flex-direction:column;
- width:30%;
+ width:20%;
+ height:100%;
  margin:1% 1%;
  box-shadow: 0px 0px 3px black;
  position: relative;
  border-radius:5px;
  .card-image{
      width:100%;
+     height:80%;
      overflow:hidden;
     
      img{
          width:100%;
-         height:100%;
+        
          border-top-left-radius:2.5px;
          border-bottom-left-radius:2.5px;
          &:hover{
@@ -40,6 +42,8 @@ import styled,{css}from 'styled-components'
      flex-direction: column;
      margin-top:2%;
      margin-left:2%;
+     
+     
      p{
          font-size:14px;
      }
@@ -55,8 +59,11 @@ import styled,{css}from 'styled-components'
      }
      .start{
          color:#08131b !important;
+         font-size:12px !important;
+         width:70% !important;
      }
  }
+
 `;
 export const ListCardStyle = styled.div`
 display: flex;
@@ -64,4 +71,5 @@ flex-wrap:wrap;
 justify-content:center;
 margin:3% 2%;
 width:96%;
+height:100%;
 `
