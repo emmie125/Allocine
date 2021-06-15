@@ -17,7 +17,7 @@ import styled,{css}from 'styled-components'
     
      img{
          width:100%;
-        
+        height: 100%;
          border-top-left-radius:2.5px;
          border-bottom-left-radius:2.5px;
          &:hover{
@@ -40,22 +40,25 @@ import styled,{css}from 'styled-components'
     width:100%;
      display:flex;
      flex-direction: column;
-     margin-top:2%;
-     margin-left:2%;
+     padding-top:2%;
+     padding-left:2%;
+     /* height:20vh; */
+     border:1px solid #68A8DA;
+     line-height:10px;
      
      
      p{
-         font-size:14px;
+         font-size:12px;
      }
      h3{
-        font-size:16px;
+        font-size:14px;
         font-style:italic;
         color:#08131b;
      }
      
      .card-title{
         text-align:left;
-        width:70%;
+        width:90%;
      }
      .start{
          color:#08131b !important;

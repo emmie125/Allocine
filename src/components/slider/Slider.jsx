@@ -31,7 +31,7 @@ export const Fader = ({imagesApi,movies}) => {
                     <div
                       className="Container-slider__images"
                       style={{
-                            background: `linear-gradient(to left bottom,rgba(4, 13, 42, 0.287),rgba(0, 0, 0, 0.7)),url(${
+                            background: `linear-gradient(0deg, rgba(8,19,27,1) 0%, rgba(8,19,27,0.7869922969187675) 83%, rgba(8,19,27,1) 100%),url(${
                           imagesApi + movie.backdrop_path
                         })`,
                         backgroundSize : "cover",
@@ -39,11 +39,11 @@ export const Fader = ({imagesApi,movies}) => {
                     >
                     </div>
                     <div>
-                      <h2 className="Container-slider__title">{`Title : ${movie.title}`}</h2>
+                      <h2 className="ContainerSliderTitle">{`Title : ${movie.title}`}</h2>
                     </div>
                     <div className="Container-slider__btn-cat">
-                     <LinkStyleMore  to={`${movie.media_type}/${movie.id}`} > <Button btnmore label="More"  /></LinkStyleMore>
-                      <LinkStyleCat to="/category"><Button btncat label="Categorys"  /></LinkStyleCat>
+                     <LinkStyleMore  to={`/category/${movie.media_type}/${movie.id}`} > <Button btnmore label="More"  /></LinkStyleMore>
+                      <LinkStyleCat to="/category"><Button btncat label="Categories"  /></LinkStyleCat>
                      
                     </div>
                     <div className="Container-slider__btn-video">

@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import { Icon, InlineIcon } from "@iconify/react";
+import { Icon} from "@iconify/react";
 import hamburgerMenu from "@iconify-icons/cil/hamburger-menu";
 import crossIcon from "@iconify-icons/akar-icons/cross";
-import { Header } from "./components/header/Header";
+import { Header } from "./pages/header/Header";
 import { Container } from "./Styled";
-import { Home } from "./components/home/Home";
+import { Home } from "./pages/home/Home";
 import {Fader} from "./components/slider/Slider";
 import { Route, Switch } from "react-router-dom";
-import { Details } from "./components/details/Details";
-import { Category } from "./components/category/Category";
+import { Details } from "./pages/details/Details";
+import { Category } from "./pages/category/Category";
 
 function App() {
   const [movies, SetMovies] = useState([]);
@@ -20,8 +20,7 @@ function App() {
 
   const trendingtvApi=`https://api.themoviedb.org/3/trending/series/day?api_key=eed93b57e7a406131996aebb2acb0aaa`
   const trendingMoviesApi = `https://api.themoviedb.org/3/trending/movie/day?api_key=eed93b57e7a406131996aebb2acb0aaa`;
-  const search_Api =
-    "https://api.themoviedb.org/3/search/movie?&api_key=eed93b57e7a406131996aebb2acb0aaa&query=";
+  // const search_Api =    "https://api.themoviedb.org/3/search/movie?&api_key=eed93b57e7a406131996aebb2acb0aaa&query=";
   const imagesApi = "https://image.tmdb.org/t/p/w1280";
     const moviesGenresApi =
       "https://api.themoviedb.org/3/genre/movie/list?api_key=eed93b57e7a406131996aebb2acb0aaa&language=en-US";
@@ -41,20 +40,18 @@ function App() {
     const resultseries = await fetch(trendingtvApi);
     let dataseries = await resultseries.json();
     dataseries=dataseries.results;
-    
     SetSeries(dataseries);
     
   }
+  async function getGenres(){
+    const resultsGenres = await fetch(moviesGenresApi);
+    const dataGenres = await resultsGenres.json();
+    setGenres(dataGenres.genres);
+  }
   useEffect(() => {
       getTrending();
-
-       fetch(moviesGenresApi)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data.genres);
-        setGenres(data.genres);
-      });
-  }, []);
+      getGenres();
+  },[]);
 
   const getMoviesByGenre = () => {
     const moviesByGenre = [];
@@ -90,8 +87,8 @@ function App() {
             <Fader movies={movies} imagesApi={imagesApi} />
             <Home movies={movies} imagesApi={imagesApi} series={series} />
         </Route>
-        <Route path="/movie/:id" render={({match})=> <Details match={match}/>}/>
-        <Route path="/tv/:id" render={({match})=> <Details match={match}/>}/>
+        <Route path="/category/movie/:id" render={({match})=> <Details match={match}/>}/>
+        <Route path="/category/tv/:id" render={({match})=> <Details match={match}/>}/>
         <Route path="/category" >
           <Category/>
         </Route>

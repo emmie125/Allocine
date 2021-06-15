@@ -20,14 +20,14 @@ width:100%;
     background-image: linear-gradient(0deg, rgba(8,19,27,1) 0%, rgba(8,19,27,0.8869922969187675) 83%, rgba(8,19,27,1) 100%);
     background-image:linear-gradient(0deg,to bottom left,rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
 }
-.Container-slider__title{
+.ContainerSliderTitle{
     color:#FFAE00 !important;
     width:55%;
     font-size:35px;
     position: absolute;
     left: 5%;
     top:70%;
-    height: 20%;
+    height: 10%;
     z-index: 3;
     background:linear-gradient(20deg,to  bottom left,rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.7));
 }

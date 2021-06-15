@@ -6,11 +6,11 @@ import { CardStyle, ListCardStyle } from './CardStyle';
 import { Icon, InlineIcon } from '@iconify/react';
 import moreInformation from '@iconify-icons/openmoji/more-information';
 import { Link, Route, Switch } from 'react-router-dom';
-import {Details} from '../details/Details'
 import { Start } from '../start/Start';
 
 
 export const Card = (props) => {
+ 
   return (
     <CardStyle card={props.card} className={props.className}>
       <div className="card-image">
@@ -19,9 +19,9 @@ export const Card = (props) => {
      
       <div className="card-description">
        <div className="card-title"> <h3>{props.title}</h3></div>
-        <Link to={`/${props.media_type}/${props.id}`}><Button secondary label="more"  onClick={props.onClick} iconButton={<Icon icon={moreInformation}/>}/></Link>
+        <Link to={`/category/${props.media_type}/${props.id}`}><Button secondary label="more"  onClick={props.onClick} iconButton={<Icon icon={moreInformation}/>}/></Link>
         <p>{props.date}</p>
-        <p > <Start min={ props.vote} className="start"/></p>
+        <div> <Start min={ props.vote} className="start"/></div>
       </div>
     </CardStyle>
   )
@@ -33,11 +33,10 @@ export default Card
    return (
      <ListCardStyle>
        {movies.map((movie,index)=>{
-         console.log(imagesApi + movie.poster_path)
          return (
-           index<position ? <>
+           index<position ? 
            <Card
-           key={movie.id}
+             key={index}
              src={imagesApi + movie.poster_path}
              title={movie.title}
              alt={movie.title}
@@ -47,7 +46,7 @@ export default Card
              id={movie.id}
              media_type={movie.media_type}
            />
-         </>
+         
          : ""
          );
        })}
