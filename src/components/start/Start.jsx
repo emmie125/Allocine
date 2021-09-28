@@ -1,6 +1,5 @@
-import React, {useState}from 'react'
-import { Rating, Ref } from 'semantic-ui-react'
-import styled from 'styled-components'
+import React from 'react'
+import { Rating } from 'semantic-ui-react'
 
 
 

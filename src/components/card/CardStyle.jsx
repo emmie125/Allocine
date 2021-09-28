@@ -1,5 +1,5 @@
 
-import styled,{css}from 'styled-components'
+import styled from 'styled-components'
 
  export const CardStyle = styled.div`
  display:flex;
@@ -41,19 +41,21 @@ import styled,{css}from 'styled-components'
      display:flex;
      flex-direction: column;
      padding-top:2%;
-     padding-left:2%;
+     padding-bottom:4%;
+     padding-left:4%;
      /* height:20vh; */
-     border:1px solid #68A8DA;
+     
      line-height:10px;
      
      
      p{
          font-size:12px;
+         color:#68A8DA;
      }
      h3{
         font-size:14px;
         font-style:italic;
-        color:#08131b;
+        color:#68A8DA;
      }
      
      .card-title{
@@ -66,7 +68,10 @@ import styled,{css}from 'styled-components'
          width:70% !important;
      }
  }
-
+ @media (max-width:768px){
+     margin:1% 1%;
+    width: 45%;
+    }
 `;
 export const ListCardStyle = styled.div`
 display: flex;
@@ -75,4 +80,6 @@ justify-content:center;
 margin:3% 2%;
 width:96%;
 height:100%;
-`
+@media (max-width:768px){
+    margin:15% 1%;
+    }`

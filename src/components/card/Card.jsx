@@ -3,9 +3,9 @@
 import React from 'react'
 import Button from '../button/Button'
 import { CardStyle, ListCardStyle } from './CardStyle';
-import { Icon, InlineIcon } from '@iconify/react';
+import { Icon } from '@iconify/react';
 import moreInformation from '@iconify-icons/openmoji/more-information';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Start } from '../start/Start';
 
 

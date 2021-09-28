@@ -16,4 +16,10 @@ top:0;
 h2{
     margin-left:15%;
     font-size:25px;
-}`
+}
+@media (max-width:768px){
+    padding:4%;
+    width: 70%;
+    text-align:left;
+   
+    }`

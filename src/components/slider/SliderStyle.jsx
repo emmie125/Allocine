@@ -20,16 +20,24 @@ width:100%;
     background-image: linear-gradient(0deg, rgba(8,19,27,1) 0%, rgba(8,19,27,0.8869922969187675) 83%, rgba(8,19,27,1) 100%);
     background-image:linear-gradient(0deg,to bottom left,rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
 }
-.ContainerSliderTitle{
-    color:#FFAE00 !important;
-    width:55%;
-    font-size:35px;
+
+.ContainerDescription{
+    display:flex;
+    flex-direction:column;
+    width: 100%;
     position: absolute;
-    left: 5%;
-    top:70%;
-    height: 10%;
+    top:60% !important;
+    left:5%;
     z-index: 3;
-    background:linear-gradient(20deg,to  bottom left,rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.7));
+    color:#FFAE00 !important;
+    font-size:55px !important;
+    h2{
+        font-size:45px !important;
+    }
+    h3{
+        font-size:35px !important;
+    }
+   
 }
 .Container-slider__btn-cat{
     position: absolute;
@@ -57,6 +65,18 @@ width:100%;
    }
 }
 
+@media (max-width:768px){
+    .ContainerDescription{
+        top:55% !important;
+        width:90% !important;
+        h2{
+        font-size:25px !important;
+    }
+    h3{
+        font-size:25px !important;
+    }
+    }
+}
 `
 export const LinkStyleMore = styled(Link)`
 text-decoration:none;
@@ -66,3 +86,7 @@ export const LinkStyleCat = styled(Link)`
 text-decoration:none;
 margin-left:2%;
 `
+export const ContainerImagesStyle = styled.div`
+width:100vw;
+height:70vh;
+`;

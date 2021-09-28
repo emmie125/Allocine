@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import {useFetch} from "./getData";
 import { Icon} from "@iconify/react";
 import hamburgerMenu from "@iconify-icons/cil/hamburger-menu";
 import crossIcon from "@iconify-icons/akar-icons/cross";
@@ -9,22 +10,22 @@ import {Fader} from "./components/slider/Slider";
 import { Route, Switch } from "react-router-dom";
 import { Details } from "./pages/details/Details";
 import { Category } from "./pages/category/Category";
+import LoaderComponent from "./components/loader/Loader";
 
 function App() {
-  const [movies, SetMovies] = useState([]);
-  const [series, SetSeries] = useState([]);
-  const [genres, setGenres] = useState([]);
+  const trendingtvApi=`https://api.themoviedb.org/3/trending/series/day?api_key=eed93b57e7a406131996aebb2acb0aaa`
+  const trendingMoviesApi = `https://api.themoviedb.org/3/trending/movie/day?api_key=eed93b57e7a406131996aebb2acb0aaa`;
+
+  const [movies,loadingMovies] = useFetch(trendingMoviesApi);
+  const [series,loadingSeries] =useFetch(trendingtvApi);
+ 
 
   const [navbarState, setNavbarState] = useState(false);
   const [iconToggle, seticonToggle] = useState(<Icon icon={hamburgerMenu} />);
 
-  const trendingtvApi=`https://api.themoviedb.org/3/trending/series/day?api_key=eed93b57e7a406131996aebb2acb0aaa`
-  const trendingMoviesApi = `https://api.themoviedb.org/3/trending/movie/day?api_key=eed93b57e7a406131996aebb2acb0aaa`;
   // const search_Api =    "https://api.themoviedb.org/3/search/movie?&api_key=eed93b57e7a406131996aebb2acb0aaa&query=";
   const imagesApi = "https://image.tmdb.org/t/p/w1280";
-    const moviesGenresApi =
-      "https://api.themoviedb.org/3/genre/movie/list?api_key=eed93b57e7a406131996aebb2acb0aaa&language=en-US";
-
+   
   const toggleClick = (e) => {
     e.preventDefault();
     setNavbarState(!navbarState);
@@ -33,49 +34,14 @@ function App() {
     );
   };
 
-  async function getTrending(){
-    const resultsMovies = await fetch(trendingMoviesApi);
-    let dataMovies = await resultsMovies.json();
-    SetMovies(dataMovies.results);
-    const resultseries = await fetch(trendingtvApi);
-    let dataseries = await resultseries.json();
-    dataseries=dataseries.results;
-    SetSeries(dataseries);
-    
-  }
-  async function getGenres(){
-    const resultsGenres = await fetch(moviesGenresApi);
-    const dataGenres = await resultsGenres.json();
-    setGenres(dataGenres.genres);
-  }
-  useEffect(() => {
-      getTrending();
-      getGenres();
-  },[]);
-
-  const getMoviesByGenre = () => {
-    const moviesByGenre = [];
-    for (let genre of genres) {
-      const foundMovies = [];
-      for (let movie of movies) {
-        if (movie.genre_ids.includes(genre.id)) {
-          foundMovies.push({
-            title: movie.title,
-            overview: movie.overview,
-            poster_path: movie.poster_path,
-            release_date: movie.release_date,
-          });
-        }
-      }
-      moviesByGenre.push({ ...genre, movies: foundMovies });
-    }
-    return moviesByGenre;
-  };
   
-  console.log(series);
+  
+  console.log("movies",movies);
   
   return (
-    <Container>
+      <>
+      {loadingMovies? <LoaderComponent/> :
+      <Container>
       <Header
         toggleClick={toggleClick}
         navbarState={navbarState}
@@ -85,7 +51,7 @@ function App() {
         <Route exact path="/">
           
             <Fader movies={movies} imagesApi={imagesApi} />
-            <Home movies={movies} imagesApi={imagesApi} series={series} />
+            <Home movies={movies} imagesApi={imagesApi} series={series} loadingSeries={loadingSeries} loadingMovies={loadingMovies}/>
         </Route>
         <Route path="/category/movie/:id" render={({match})=> <Details match={match}/>}/>
         <Route path="/category/tv/:id" render={({match})=> <Details match={match}/>}/>
@@ -93,7 +59,8 @@ function App() {
           <Category/>
         </Route>
       </Switch>
-    </Container>
+      </Container>}
+    </>
   );
 }
 export default App;
