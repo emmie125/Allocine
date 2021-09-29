@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {useFetch} from "./getData";
 import { Icon} from "@iconify/react";
 import hamburgerMenu from "@iconify-icons/cil/hamburger-menu";

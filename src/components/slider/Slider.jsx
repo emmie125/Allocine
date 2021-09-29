@@ -60,7 +60,7 @@ export const Fader = ({ imagesApi, movies }) => {
   );
 };
 
-export const FaderCategory = ({ imagesApi, movies }) => {
+export const FaderCategory = ({  movies,imagesApi }) => {
   return (
     <Fade {...proprietes}>
       {movies === undefined || movies.map((movie, index) => {
